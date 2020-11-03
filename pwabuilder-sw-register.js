@@ -12,3 +12,22 @@ import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
 const el = document.createElement('pwa-update');
 document.body.appendChild(el);
+
+ if(!('serviceWorker' in navigator)){
+            console.log("Service worker tidak didukung browser ini");
+        } else {
+            registerServiceWorker();
+            requestPermission();
+        }
+
+        //Register service worker
+        function registerServiceWorker(){
+            return navigator.serviceWorker.register('pwabuilder-sw.js')
+            .then(function(registration){
+                console.log("Registrasi service worker berhasil");
+                return registration;
+            })
+            .catch(function(err){
+                console.log("Registrasi service worker gagal", err);
+            });
+        }
