@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="/assets/css/sections/achievements.css" />
 
 
+  <link rel="manifest" href="manifest.json"></link>
 
 
   <script type="application/javascript">
@@ -549,6 +550,28 @@
   <script src="/assets/js/github-button.js"></script>
   <script src="/assets/js/home.js"></script>
   <script src="/assets/js/jquery.filterizr.min.js"></script>
+  <script src="pwabuilder-sw-register.js"></script>
+  <script>
+    //Periksa service worker
+        if(!('serviceWorker' in navigator)){
+            console.log("Service worker tidak didukung browser ini");
+        } else {
+            registerServiceWorker();
+            requestPermission();
+        }
+
+        //Register service worker
+        function registerServiceWorker(){
+            return navigator.serviceWorker.register('pwabuilder-sw.js')
+            .then(function(registration){
+                console.log("Registrasi service worker berhasil");
+                return registration;
+            })
+            .catch(function(err){
+                console.log("Registrasi service worker gagal", err);
+            });
+        }
+      </script>
 </body>
 
 </html>
