@@ -8,6 +8,7 @@ const CACHE = "pwabuilder-page";
 const offlineFallbackPage = [
   "/",
   "/index.html",
+  "/404.html",
   "/manifest.json",
   "/pwabuilder-sw.js",
   "/pwabuilder-sw-register.js",
