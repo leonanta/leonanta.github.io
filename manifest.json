@@ -5,7 +5,7 @@
     "short_name": "Leonanta",
     "scope": "/",
     "display": "standalone",
-    "start_url": "http://leonanta.github.io/",
+    "start_url": "https://leonanta.github.io/",
     "background_color": "transparent",
     "theme_color": "transparent",
     "description": "Portfolio of Leonanta Pramudya Kusuma.",
